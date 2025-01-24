@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signupUser } from "../features/user/userSlice";
 import axios from "axios";
@@ -122,6 +123,61 @@ const SignupForm = () => {
           </div>
           <button type="submit" disabled={loading}>
             {loading ? "Signing up..." : "Signup"}
+          </button>
+
+          <p
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Already have an account?{" "}
+            <Link to="/login" style={{ color: "blue", textDecoration: "none" }}>
+              {" "}
+              Log In{" "}
+            </Link>
+          </p>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div style={{ width: "150px", borderTop: "1px solid grey" }}></div>
+            <p
+              style={{
+                marginBottom: "35px",
+                marginLeft: "20px",
+                marginRight: "20px",
+              }}
+            >
+              or
+            </p>
+            <div style={{ width: "150px", borderTop: "1px solid grey" }}></div>
+          </div>
+
+          <button
+            style={{
+              backgroundColor: "white",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              border: "2px solid black",
+              padding: "1px",
+            }}
+          >
+            <img
+              src="https://yt3.googleusercontent.com/2eI1TjX447QZFDe6R32K0V2mjbVMKT5mIfQR-wK5bAsxttS_7qzUDS1ojoSKeSP0NuWd6sl7qQ=s900-c-k-c0x00ffffff-no-rj"
+              alt="google-img"
+              width="22px"
+              height="22px"
+            />
+            <p style={{ color: "black", marginLeft: "10px" }}>
+              Sign up with Google
+            </p>
           </button>
         </form>
       ) : (
